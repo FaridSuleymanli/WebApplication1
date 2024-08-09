@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using WebApplication1.Repository;
 namespace WebApplication1.Controllers
 {
@@ -19,7 +18,7 @@ public class CommentController : ControllerBase
     public async Task<IActionResult> GetAll()
     {
         var comments = await _commentRepo.GetAllAsync();
-        var commentDto = comments.Select(s => s.ToCommentDto()).;
+        var commentDto = comments.Select(s => s.ToCommentDto());
 
         return Ok(commentDto);
     }
